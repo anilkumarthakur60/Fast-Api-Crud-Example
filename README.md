@@ -12,11 +12,7 @@
 
 
 ```
-filters:{
-    tagIds:value,
-    categoryIds:value,
-    queryFilter:value
-}
+
 //its url can be like this
 http://localhost:8000/api/v1/posts?filters={"tagIds":[1,2],"categoryIds":[1,2],"queryFilter":"test"}
 ```
@@ -57,5 +53,6 @@ http://localhost:8000/api/v1/posts?filters={"tagIds":[1,2],"categoryIds":[1,2],"
         return $query->whereHas('tags', function (Builder $query) use ($values) {
             $query->whereIn('tags.id', flatData($values));
         });
-    }   
+    }
+// scopes are better for query building  and reusability
 ```
