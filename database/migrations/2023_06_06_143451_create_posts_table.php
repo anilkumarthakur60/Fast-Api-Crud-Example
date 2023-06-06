@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('title');
             $table->longText('description');
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
+            $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

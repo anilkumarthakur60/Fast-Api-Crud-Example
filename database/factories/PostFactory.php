@@ -21,6 +21,7 @@ class PostFactory extends Factory
             'title' => $this->faker->name,
             'description' => $this->faker->name,
             'category_id' => Category::factory(),
+            'status' => $this->faker->boolean,
         ];
     }
 }
