@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Category extends Model
+class Tag extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Category extends Model
         'name',
     ];
 
-    public function posts():HasMany
+    public function posts():BelongsToMany
     {
-        return $this->hasMany(Post::class, 'category_id', 'id');
+        return $this->belongsToMany(Post::class, 'post_tag', 'tag_id', 'post_id');
     }
 }
