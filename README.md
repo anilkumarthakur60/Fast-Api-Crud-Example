@@ -1,12 +1,8 @@
-```angular2html
 
-php artisan tinker
-
-//paste this code
-\App\Models\Category::factory(4)->has(
-        \App\Models\Post::factory()->count(3)->has(
-            \App\Models\Tag::factory()->count(5)
-        )
-    )
-->create();
-```
+##
+1. copy .env.example .env
+2. edit .env
+3. php artisan key:generate
+4. php artisan migrate
+5. php artisan db:seed
+##
