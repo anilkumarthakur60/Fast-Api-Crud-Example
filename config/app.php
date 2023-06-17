@@ -17,6 +17,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'customer_password_reset_link' => env('CUSTOMER_PASSWORD_RESET_LINK', 'http://localhost:9000/reset-password'),
 
     /*
     |--------------------------------------------------------------------------

@@ -23,7 +23,7 @@ class PasswordResetJob implements ShouldQueue
     public function handle(): void
     {
         ResetPassword::createUrlUsing(function (Admin $admin, string $token) {
-            return "http://127.0.0.1:8000/api/reset-password?token=$token";
+            return config('app.customer_password_reset_link')."?token=$token";
         });
         $this->admin->sendPasswordResetNotification(
             Password::broker()->createToken($this->admin)
