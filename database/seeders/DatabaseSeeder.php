@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        $this->call([
+            AdminSeeder::class,
+        ]);
         Category::factory(4)
             ->has(
                 Post::factory()->count(3)
@@ -29,5 +32,6 @@ class DatabaseSeeder extends Seeder
                         Tag::factory()->count(5)
                     )
             )->create();
+
     }
 }
